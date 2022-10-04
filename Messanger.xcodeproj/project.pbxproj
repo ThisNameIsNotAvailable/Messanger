@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A53136728E9F094000BDBB4 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53136628E9F094000BDBB4 /* ConversationTableViewCell.swift */; };
+		3A53136928ECE1FC000BDBB4 /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A53136828ECE1FC000BDBB4 /* NewConversationCell.swift */; };
 		3A5426F728E3BD060023DCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5426F628E3BD060023DCD2 /* AppDelegate.swift */; };
 		3A5426F928E3BD060023DCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5426F828E3BD060023DCD2 /* SceneDelegate.swift */; };
 		3A5426FB28E3BD060023DCD2 /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5426FA28E3BD060023DCD2 /* ConversationsViewController.swift */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		0C9911F2C123DA4AC09D57A5 /* Pods-Messanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Messanger.release.xcconfig"; path = "Target Support Files/Pods-Messanger/Pods-Messanger.release.xcconfig"; sourceTree = "<group>"; };
+		3A53136628E9F094000BDBB4 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		3A53136828ECE1FC000BDBB4 /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
 		3A5426F328E3BD060023DCD2 /* Messanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5426F628E3BD060023DCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A5426F828E3BD060023DCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			children = (
 				3A54270F28E3C06C0023DCD2 /* Storyboards */,
 				3A5426FF28E3BD070023DCD2 /* Assets.xcassets */,
+				3A53136828ECE1FC000BDBB4 /* NewConversationCell.swift */,
+				3A53136628E9F094000BDBB4 /* ConversationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A54271128E3C1560023DCD2 /* LoginViewController.swift in Sources */,
+				3A53136928ECE1FC000BDBB4 /* NewConversationCell.swift in Sources */,
 				3ADDA19028E4B6CB007160DF /* DatabaseManager.swift in Sources */,
 				3A54271328E3C1640023DCD2 /* RegisterViewController.swift in Sources */,
 				3A54271928E3C1BA0023DCD2 /* NewConversationViewController.swift in Sources */,
@@ -306,6 +313,7 @@
 				3A5426F728E3BD060023DCD2 /* AppDelegate.swift in Sources */,
 				3A54271B28E3C1CD0023DCD2 /* ProfileViewController.swift in Sources */,
 				3A5426F928E3BD060023DCD2 /* SceneDelegate.swift in Sources */,
+				3A53136728E9F094000BDBB4 /* ConversationTableViewCell.swift in Sources */,
 				3AFF20CB28E63B5100C1B33B /* ChatViewController.swift in Sources */,
 				3A54271528E3C18D0023DCD2 /* PhotoViewerViewController.swift in Sources */,
 				3AFF20CD28E766F600C1B33B /* StorageManager.swift in Sources */,

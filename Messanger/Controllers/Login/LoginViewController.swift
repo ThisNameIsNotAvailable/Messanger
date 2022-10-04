@@ -140,8 +140,8 @@ class LoginViewController: UIViewController {
                   let lastName = user?.profile?.familyName else {
                 return
             }
-            
-            
+            UserDefaults.standard.set(email, forKey: "email")
+            UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
             Auth.auth().fetchSignInMethods(forEmail: email) { providers, _ in
                 if let providers = providers, providers.contains("facebook.com") {
                     strongSelf.alertUserLoginError(message: "An account already exists with the same email address but different sign-in credentials. Sign in using a provider associated with this email address.")
@@ -238,6 +238,23 @@ class LoginViewController: UIViewController {
                 return
             }
             let user = result.user
+            
+            let safeEmail = DatabaseManager.safeEmail(emailAddress: email)
+            DatabaseManager.shared.getDataFor(path: safeEmail) { result in
+                switch result {
+                case .success(let data):
+                    guard let userData = data as? [String : Any],
+                          let firstName = userData["first_name"] as? String,
+                          let lastName = userData["last_name"] as? String else {
+                        return
+                    }
+                    UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                case .failure(let error):
+                    print("Failed to read data with error \(error)")
+                }
+            }
+            UserDefaults.standard.set(email, forKey: "email")
+            
             print("Logged in user \(user)")
             strongSelf.navigationController?.dismiss(animated: true)
         }
@@ -290,11 +307,13 @@ extension LoginViewController: LoginButtonDelegate {
                   let lastName = result["last_name"] as? String,
                   let email = result["email"] as? String,
                   let picture = result["picture"] as? [String: Any],
-                  let data = picture["data"]as? [String: Any],
+                  let data = picture["data"] as? [String: Any],
                   let pictureURL = data["url"] as? String else {
                 print("Failes to get email and user name from fb result")
                 return
             }
+            UserDefaults.standard.set(email, forKey: "email")
+            UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
             DatabaseManager.shared.userExists(with: email) { exists in
                 if !exists {
                     let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)

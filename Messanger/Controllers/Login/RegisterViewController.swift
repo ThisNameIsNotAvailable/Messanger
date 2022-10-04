@@ -105,8 +105,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Log in"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
+        title = "Register"
         registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         emailField.delegate = self
         passwordField.delegate = self
@@ -189,6 +188,8 @@ class RegisterViewController: UIViewController {
                 }
                 
                 let chatUser = ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email)
+                UserDefaults.standard.set("\(firstName) \(lastName)", forKey: "name")
+                UserDefaults.standard.set(email, forKey: "email")
                 DatabaseManager.shared.insertUser(with: chatUser) { success in
                     if success {
                         //upload image
@@ -218,12 +219,6 @@ class RegisterViewController: UIViewController {
         let alert = UIAlertController(title: "Woops", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(alert, animated: true)
-    }
-    
-    @objc private func didTapRegister() {
-        let vc = RegisterViewController()
-        vc.title = "Create Account"
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
