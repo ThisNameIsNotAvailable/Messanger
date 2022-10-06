@@ -91,11 +91,11 @@
             </objects>
             <point key="canvasLocation" x="-185" y="16"/>
         </scene>
-        <!--Chat-->
+        <!--Chats-->
         <scene sceneID="RwX-Bp-aHj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A7r-uF-UPL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="message" catalog="system" selectedImage="message" id="Rh7-Nz-V4n"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="message" catalog="system" selectedImage="message" id="Rh7-Nz-V4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vtK-g5-upI">
                         <rect key="frame" x="0.0" y="47" width="390" height="96"/>
